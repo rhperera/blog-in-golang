@@ -1,4 +1,4 @@
-package controllers
+package BlogController
 
 import (
   _"fmt"

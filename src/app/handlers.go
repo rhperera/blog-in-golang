@@ -20,13 +20,13 @@ import (
 // }
 
 func GetAllBlogPostsHandler(w http.ResponseWriter, r *http.Request) {
-  result := controllers.GetAllBlogPosts()
+  result := BlogController.GetAllBlogPosts()
   fmt.Fprintln(w,result)
 }
 
 func GetBlogPostByIdHandler(w http.ResponseWriter, r *http.Request) {
   vars  := mux.Vars(r)
   id    := vars["id"]
-  result := controllers.GetBlogPostById(id)
+  result := BlogController.GetBlogPostById(id)
   fmt.Fprintln(w,result)
 }

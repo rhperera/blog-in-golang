@@ -1,8 +1,6 @@
 package main
 
 import (
-  _"fmt"
-  _"app/models"
   "net/http"
   "app/framework"
 )
@@ -30,7 +28,7 @@ var routes = Router.Routes{
     Router.Route{
         "GetBlogPostByIdHandler",
         "GET",
-        "/todos",
+        "/todos/{id}",
         GetBlogPostByIdHandler,
     },
 }
