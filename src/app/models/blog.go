@@ -1,4 +1,4 @@
-package models
+package BlogModel
 
 type Blogpost struct{
   Id int
