@@ -4,6 +4,7 @@ import (
   _"fmt"
   _"app/models"
   "net/http"
+  "app/framework"
 )
 
 func main() {
@@ -12,18 +13,21 @@ func main() {
   // blogpost := models.CreateBlogpost(2,"Hello World","How are you doing today",890)
   // fmt.Println(blogpost.Title)
   // fmt.Println(blogpost.GetContent())
-  router := CreateNewRouter(routes)
+  router := Router.CreateNewRouter(routes)
   http.ListenAndServe(":8080",router)
 }
 
-var routes = Routes{
-    Route{
+/* All the routes with methods and their handlers
+  NAME, METHOD, PATH, HANDLER FUNCTION
+*/
+var routes = Router.Routes{
+    Router.Route{
         "GetAllBlogPostsHandler",
         "GET",
         "/",
         GetAllBlogPostsHandler,
     },
-    Route{
+    Router.Route{
         "GetBlogPostByIdHandler",
         "GET",
         "/todos",

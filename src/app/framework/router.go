@@ -1,4 +1,4 @@
-package main
+package Router
 
 import (
   "net/http"
@@ -15,7 +15,6 @@ type Route struct{
 type Routes []Route
 
 func CreateNewRouter(routes Routes) *mux.Router {
-
   router := mux.NewRouter().StrictSlash(true)
   for _, route := range routes {
       router.
@@ -24,7 +23,5 @@ func CreateNewRouter(routes Routes) *mux.Router {
         Name(route.Name).
         HandlerFunc(route.Handler)
   }
-
   return router
-
 }
