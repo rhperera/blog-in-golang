@@ -16,13 +16,13 @@ type Routes []Route
 
 func CreateNewRouter(routes Routes) *mux.Router {
 
-  router := mux.NewRouter().strictSlash(true)
+  router := mux.NewRouter().StrictSlash(true)
   for _, route := range routes {
-      router
-      .Methods(route.Method)
-      .Path(route.Path)
-      .Name(route.Name)
-      .Handler(router.Handler)
+      router.
+        Methods(route.Method).
+        Path(route.Path).
+        Name(route.Name).
+        HandlerFunc(route.Handler)
   }
 
   return router
