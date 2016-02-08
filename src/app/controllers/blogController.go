@@ -3,6 +3,7 @@ package BlogController
 import (
   _"fmt"
   _"app/models"
+  "github.com/siddontang/ledisdb"
 )
 
 func GetAllBlogPosts() string {
